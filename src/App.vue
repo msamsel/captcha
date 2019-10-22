@@ -1,6 +1,7 @@
 <template>
 	<div id="app">
 		<Header title="Captcha" />
+		<Instruction :validImageType="validCategory" />
 		<CaptchaImages :images="images" />
 	</div>
 </template>
@@ -8,13 +9,16 @@
 <script>
 import Header from './components/Header.vue';
 import CaptchaImages from './components/CaptchaImages.vue';
+import Instruction from './components/Instruction.vue';
+
 import { getInitialImages, getRandomCategory } from './utils/utils.js';
 
 export default {
 	name: 'app',
 	components: {
 		Header,
-		CaptchaImages
+		CaptchaImages,
+		Instruction
 	},
 	data() {
 		const validCategory = getRandomCategory();
