@@ -1,18 +1,31 @@
 <template>
 	<div id="app">
-		<Header title="Captch"/>
+		<Header title="Captcha" />
+		<CaptchaImages :images="images" />
 	</div>
 </template>
 
 <script>
-import Header from './components/Header.vue'
+import Header from './components/Header.vue';
+import CaptchaImages from './components/CaptchaImages.vue';
+import { getInitialImages, getRandomCategory } from './utils/utils.js';
 
 export default {
 	name: 'app',
 	components: {
-		Header
+		Header,
+		CaptchaImages
+	},
+	data() {
+		const validCategory = getRandomCategory();
+		const invalidCategory = getRandomCategory( validCategory );
+		return {
+			validCategory,
+			invalidCategory,
+			images: getInitialImages( { number: 16, validCategory, invalidCategory } )
+		};
 	}
-}
+};
 </script>
 
 <style>
@@ -22,6 +35,6 @@ export default {
 	-moz-osx-font-smoothing: grayscale;
 	text-align: center;
 	color: #2c3e50;
-	margin-top: 60px;
+	margin-top: 20px;
 }
 </style>
