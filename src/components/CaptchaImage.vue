@@ -1,5 +1,5 @@
 <template>
-	<img :src="src" :alt="category" />
+	<img :src="src" :alt="category" @click="$emit( 'img-clicked' )" />
 </template>
 
 <script>

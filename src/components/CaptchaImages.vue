@@ -4,6 +4,7 @@
 			:key="image.id"
 			:category="image.category"
 			:src="image.src"
+			@img-clicked="$emit( 'img-clicked', image )"
 		/>
 	</div>
 </template>
@@ -28,6 +29,9 @@ export default {
 		img {
 			margin: 5% 0;
 			border: 1px solid black;
+			&:hover {
+				cursor: pointer;
+			}
 		}
 	}
 </style>

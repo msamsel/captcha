@@ -1,11 +1,11 @@
 <template>
-	<h2>Please select all images with {{ validImageType }}.</h2>
+	<h2>{{ userNotification }}</h2>
 </template>
 
 <script>
 export default {
 	name: 'Instruction',
-	props: [ 'validImageType' ]
+	props: [ 'userNotification' ]
 };
 </script>
 
