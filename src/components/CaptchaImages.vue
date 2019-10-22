@@ -24,7 +24,7 @@ export default {
 <style scoped lang="scss">
 	.gallery {
 		margin: 0 auto;
-		width: 70vw;
+		max-width: 600px;
 		columns: 4;
 		img {
 			margin: 5% 0;
